@@ -17,7 +17,7 @@ int bankAccount :: withdraw(){
     cin>>bal;
     if( balance < bal || balance <= 0){
     cout<<"Insufficient Balance";
-    exit(1);}
+    }
     else{
     balance = balance - bal;}
     return 0;
@@ -35,9 +35,32 @@ void bankAccount :: showbalance(){
 }
 
 int main(){
+    int choice;
     bankAccount b1;
-    b1.deposit();
-    b1.withdraw();
-    b1.showbalance();
+    cout<<"=======Welcome to ATM======="<<endl;
+    do
+    {
+    cout<<endl<<endl<<"Please select the menu:"<<endl<<"1.Deposit"<<endl<<"2.Withdraw"<<endl<<"3.Show balance"<<endl<<"4.Exit"<<endl;
+    cout<<"Enter choice:";
+    cin>>choice;
+    switch (choice)
+    {
+    case 1:
+        b1.deposit();
+        break;
+    case 2:
+        b1.withdraw();
+        break;
+    
+    case 3:
+        b1.showbalance();
+        break;
+    case 4:
+        break;
+    default:
+    cout<<"Invalid choice";
+        break;
+    }
+    } while (choice!=4);
     return 0;
 }
