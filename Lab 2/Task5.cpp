@@ -21,9 +21,16 @@ class employeeClass{
     this->salary=salary;
     }
 
-    int getEmployee(){
-        cout<<"Details of employee in class:"<<endl<<name<<endl<<age<<endl<<salary;
-        return 0;
+    string getName(){
+        return name;
+    }
+
+    int getAge(){
+        return age;
+    }
+
+    int getSalary(){
+        return salary;
     }
 };
 int main(){
@@ -35,5 +42,5 @@ int main(){
 
     employeeClass E1;
     E1.setEmployee("Jack",41,320000);
-    cout<<E1.getEmployee();
+    cout<<"Details of employee in class:"<<endl<<E1.getName()<<endl<<E1.getAge()<<endl<<E1.getSalary();
 }
